@@ -1,0 +1,1174 @@
+/* ==================================================
+   RESET
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        "Trebuchet MS",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: #f8f0e6;
+    color: #061c3d;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* ==================================================
+   VARIÁVEIS
+================================================== */
+
+:root {
+    --navy: #062b58;
+    --blue: #0568bd;
+    --blue-light: #1e9be0;
+    --paper: #f5e5d2;
+    --white: #ffffff;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.header {
+    width: 100%;
+    height: 82px;
+
+    background: #f4e4d3;
+
+    position: relative;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* textura / recorte do papel */
+
+.header::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: -5px;
+
+    height: 10px;
+
+    background: #f4e4d3;
+
+    clip-path:
+        polygon(
+            0 20%,
+            4% 50%,
+            8% 30%,
+            12% 60%,
+            17% 35%,
+            22% 55%,
+            27% 30%,
+            33% 60%,
+            38% 35%,
+            44% 55%,
+            50% 25%,
+            56% 60%,
+            62% 30%,
+            68% 55%,
+            74% 35%,
+            80% 60%,
+            86% 30%,
+            92% 55%,
+            100% 30%,
+            100% 0,
+            0 0
+        );
+}
+
+
+.header-container {
+    width: min(1400px, 90%);
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        250px
+        1fr
+        245px;
+
+    align-items: center;
+    gap: 25px;
+}
+
+
+/* ==================================================
+   LOGO
+================================================== */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    width: 235px;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* ==================================================
+   NAV
+================================================== */
+
+.nav {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 43px;
+}
+
+.nav-link {
+    position: relative;
+
+    font-size: 17px;
+
+    color: #09182d;
+
+    padding: 12px 2px;
+
+    transition:
+        color .25s ease,
+        transform .25s ease;
+}
+
+.nav-link:hover {
+    color: #006ac6;
+    transform: translateY(-2px);
+}
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 2px;
+
+    width: 0;
+    height: 3px;
+
+    border-radius: 100px;
+
+    background: #006ac6;
+
+    transform: translateX(-50%);
+
+    transition: width .25s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: #005ca9;
+}
+
+
+/* ==================================================
+   BOTÃO HEADER
+================================================== */
+
+.header-button {
+    justify-self: end;
+
+    min-width: 235px;
+    height: 52px;
+
+    padding: 0 25px;
+
+    border-radius: 100px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0062b7,
+            #0875cc
+        );
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    font-size: 17px;
+
+    box-shadow:
+        0 7px 18px
+        rgba(0, 60, 120, .16);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.header-button span {
+    font-size: 24px;
+}
+
+.header-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 22px
+        rgba(0, 60, 120, .25);
+}
+
+
+/* ==================================================
+   MENU MOBILE
+================================================== */
+
+.menu-toggle {
+    display: none;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 29px;
+    height: 3px;
+
+    margin: 6px;
+
+    border-radius: 10px;
+
+    background: var(--navy);
+}
+
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+    position: relative;
+
+    width: 100%;
+
+    height: calc(100vh - 82px);
+
+    min-height: 650px;
+    max-height: 850px;
+
+    overflow: hidden;
+}
+
+
+/* ==================================================
+   BACKGROUND
+================================================== */
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+
+    background-image: url("img/background.png");
+
+    background-size: cover;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+    z-index: 0;
+}
+
+
+/* camada discreta */
+
+.hero-background::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 70, 120, .03),
+            transparent 45%,
+            rgba(0, 80, 130, .02)
+        );
+}
+
+
+/* ==================================================
+   GRID PRINCIPAL
+================================================== */
+
+.hero-container {
+    position: relative;
+
+    z-index: 10;
+
+    width: min(1440px, 92%);
+    height: 100%;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        31%
+        42%
+        27%;
+
+    align-items: center;
+}
+
+
+/* ==================================================
+   LADO ESQUERDO
+================================================== */
+
+.hero-left {
+    align-self: start;
+
+    padding-top: 38px;
+
+    position: relative;
+
+    z-index: 20;
+}
+
+
+/* título */
+
+.hero-title {
+    width: min(455px, 100%);
+
+    filter:
+        drop-shadow(
+            0 4px 4px
+            rgba(0, 0, 0, .08)
+        );
+}
+
+
+/* descrição */
+
+.hero-description {
+    width: min(390px, 92%);
+
+    margin-top: 15px;
+
+    filter:
+        drop-shadow(
+            0 3px 3px
+            rgba(0, 0, 0, .07)
+        );
+}
+
+
+/* ==================================================
+   BOTÕES HERO
+================================================== */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 17px;
+}
+
+.button-primary,
+.button-secondary {
+    height: 50px;
+
+    border-radius: 100px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.button-primary {
+    padding: 0 21px 0 9px;
+
+    gap: 9px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0566bc,
+            #0582dc
+        );
+
+    box-shadow:
+        0 7px 16px
+        rgba(0, 50, 100, .20);
+
+    font-size: 15px;
+}
+
+.play-icon {
+    width: 36px;
+    height: 36px;
+
+    border-radius: 50%;
+
+    display: grid;
+
+    place-items: center;
+
+    background: #f7e8d6;
+
+    color: #0864ad;
+
+    font-size: 13px;
+}
+
+.button-secondary {
+    padding: 0 21px;
+
+    gap: 10px;
+
+    color: #10213b;
+
+    background: #f4e5d3;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 5px 14px
+        rgba(0, 0, 0, .10);
+}
+
+.button-primary:hover,
+.button-secondary:hover {
+    transform:
+        translateY(-3px)
+        rotate(-1deg);
+}
+
+
+/* ==================================================
+   MASCOTE
+================================================== */
+
+.hero-center {
+    height: 100%;
+
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: center;
+
+    position: relative;
+
+    z-index: 16;
+}
+
+.mascote {
+    width: 545px;
+
+    max-width: none;
+
+    position: relative;
+
+    left: -5px;
+    bottom: 5px;
+
+    filter:
+        drop-shadow(
+            0 9px 10px
+            rgba(0, 0, 0, .12)
+        );
+}
+
+
+/* ==================================================
+   LADO DIREITO
+================================================== */
+
+.hero-right {
+    height: 100%;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    z-index: 15;
+}
+
+.relatadores {
+    width: 350px;
+
+    max-width: 100%;
+
+    position: relative;
+
+    top: 65px;
+    right: 0;
+
+    filter:
+        drop-shadow(
+            0 6px 6px
+            rgba(0, 0, 0, .08)
+        );
+}
+
+
+/* ==================================================
+   TEXTO "SERGIPE CONECTADO..."
+================================================== */
+
+.right-message {
+    position: absolute;
+
+    top: 28px;
+    right: 5px;
+
+    width: 220px;
+
+    color: #071d39;
+
+    text-align: center;
+
+    z-index: 20;
+
+    transform: rotate(-4deg);
+}
+
+.right-message p {
+    font-size: 20px;
+    line-height: 1.12;
+}
+
+.sun {
+    position: absolute;
+
+    right: -1px;
+    top: 39px;
+
+    color: #ffb900;
+
+    font-size: 44px;
+}
+
+.arrow-hand {
+    font-size: 44px;
+    line-height: 1;
+
+    position: absolute;
+
+    left: 34px;
+    top: 100px;
+
+    transform: rotate(15deg);
+}
+
+
+
+
+/* ==================================================
+   SEÇÕES SEGUINTES
+================================================== */
+
+.content-section {
+    min-height: 600px;
+
+    padding: 100px 5%;
+
+    background: #f7eadc;
+}
+
+.section-container {
+    width: min(1200px, 100%);
+
+    margin: auto;
+}
+
+.section-tag {
+    display: inline-block;
+
+    margin-bottom: 20px;
+
+    padding: 10px 20px;
+
+    border-radius: 100px;
+
+    background: #d8efff;
+
+    color: #0669b9;
+
+    font-weight: 700;
+}
+
+.content-section h2 {
+    max-width: 750px;
+
+    color: #08294f;
+
+    font-size:
+        clamp(
+            40px,
+            5vw,
+            70px
+        );
+
+    line-height: .98;
+}
+
+.content-section h2 span {
+    color: #0781cf;
+}
+
+.content-section p {
+    max-width: 700px;
+
+    margin-top: 30px;
+
+    color: #35475a;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+}
+
+.section-blue {
+    background: #dff3ff;
+}
+
+
+/* ==================================================
+   RESPONSIVO - NOTEBOOK
+================================================== */
+
+@media (max-width: 1300px) {
+
+    .header-container {
+        width: 92%;
+
+        grid-template-columns:
+            220px
+            1fr
+            210px;
+
+        gap: 20px;
+    }
+
+    .logo {
+        width: 210px;
+    }
+
+    .nav {
+        gap: 27px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+    }
+
+    .header-button {
+        min-width: 205px;
+
+        height: 48px;
+
+        padding: 0 20px;
+
+        font-size: 15px;
+    }
+
+    .hero-container {
+        width: 94%;
+
+        grid-template-columns:
+            32%
+            41%
+            27%;
+    }
+
+    .hero-title {
+        width: min(410px, 100%);
+    }
+
+    .hero-description {
+        width: min(355px, 94%);
+    }
+
+    .mascote {
+        width: 500px;
+
+        left: 0;
+    }
+
+    .relatadores {
+        width: 315px;
+
+        top: 65px;
+    }
+
+    .right-message {
+        transform:
+            scale(.82)
+            rotate(-4deg);
+
+        transform-origin: top right;
+    }
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 1050px) {
+
+    .header {
+        height: 78px;
+    }
+
+    .header-container {
+        display: flex;
+
+        justify-content: space-between;
+    }
+
+    .logo {
+        width: 210px;
+    }
+
+    .header-button {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+
+        position: relative;
+
+        z-index: 200;
+    }
+
+    .nav {
+        position: absolute;
+
+        top: 78px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 30px;
+
+        background: #f5e5d3;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        transform: translateY(-150%);
+
+        opacity: 0;
+
+        pointer-events: none;
+
+        transition:
+            transform .3s ease,
+            opacity .3s ease;
+
+        box-shadow:
+            0 15px 25px
+            rgba(0, 0, 0, .10);
+    }
+
+    .nav.open {
+        transform: translateY(0);
+
+        opacity: 1;
+
+        pointer-events: auto;
+    }
+
+    .hero {
+        height: auto;
+
+        min-height: 1030px;
+
+        max-height: none;
+    }
+
+    .hero-container {
+        width: 92%;
+
+        grid-template-columns:
+            1fr
+            1fr;
+
+        grid-template-areas:
+            "left left"
+            "center right";
+
+        align-items: start;
+    }
+
+    .hero-left {
+        grid-area: left;
+
+        width: 580px;
+        max-width: 100%;
+
+        padding-top: 38px;
+    }
+
+    .hero-title {
+        width: min(440px, 100%);
+    }
+
+    .hero-description {
+        width: min(390px, 95%);
+    }
+
+    .hero-center {
+        grid-area: center;
+
+        align-items: flex-end;
+
+        height: 600px;
+    }
+
+    .hero-right {
+        grid-area: right;
+
+        height: 600px;
+    }
+
+    .mascote {
+        width: 500px;
+
+        left: 25px;
+        bottom: 5px;
+    }
+
+    .relatadores {
+        width: 330px;
+
+        top: 130px;
+        right: 0;
+    }
+
+    .right-message {
+        top: 20px;
+
+        transform:
+            scale(.80)
+            rotate(-4deg);
+
+        transform-origin: top right;
+    }
+
+    .waves {
+        height: 85px;
+    }
+}
+
+
+/* ==================================================
+   CELULAR
+================================================== */
+
+@media (max-width: 700px) {
+
+    .header {
+        height: 70px;
+    }
+
+    .header-container {
+        width: 90%;
+    }
+
+    .logo {
+        width: 175px;
+    }
+
+    .nav {
+        top: 70px;
+    }
+
+    .hero {
+        min-height: 1270px;
+    }
+
+    .hero-background {
+        background-position: 55% center;
+    }
+
+    .hero-background::after {
+        background:
+            rgba(
+                255,
+                255,
+                255,
+                .14
+            );
+    }
+
+    .hero-container {
+        display: flex;
+
+        flex-direction: column;
+
+        width: 90%;
+    }
+
+    .hero-left {
+        width: 100%;
+
+        padding-top: 30px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .hero-title {
+        width: min(430px, 100%);
+    }
+
+    .hero-description {
+        width: min(380px, 94%);
+
+        margin-top: 14px;
+    }
+
+    .hero-buttons {
+        width: 100%;
+
+        flex-direction: column;
+
+        margin-top: 18px;
+    }
+
+    .button-primary,
+    .button-secondary {
+        width: min(360px, 100%);
+    }
+
+    .hero-center {
+        width: 100%;
+
+        height: 500px;
+
+        margin-top: 10px;
+    }
+
+    .mascote {
+        width: 460px;
+
+        max-width: 120%;
+
+        left: 0;
+        bottom: 0;
+    }
+
+    .hero-right {
+        width: 100%;
+
+        height: 400px;
+
+        margin-top: -25px;
+
+        justify-content: center;
+    }
+
+    .relatadores {
+        width: min(350px, 95%);
+
+        max-width: 100%;
+
+        top: 40px;
+        right: 0;
+    }
+
+    .right-message {
+        display: none;
+    }
+
+    .waves {
+        height: 70px;
+    }
+
+    .content-section {
+        min-height: 500px;
+
+        padding: 75px 25px;
+    }
+
+    .content-section p {
+        font-size: 17px;
+    }
+}
+
+
+/* ==================================================
+   CELULARES PEQUENOS
+================================================== */
+
+@media (max-width: 420px) {
+
+    .logo {
+        width: 155px;
+    }
+
+    .hero {
+        min-height: 1190px;
+    }
+
+    .hero-left {
+        padding-top: 25px;
+    }
+
+    .hero-title {
+        width: 100%;
+
+        max-width: 360px;
+    }
+
+    .hero-description {
+        width: 100%;
+
+        max-width: 340px;
+    }
+
+    .button-primary,
+    .button-secondary {
+        height: 48px;
+    }
+
+    .hero-center {
+        height: 440px;
+    }
+
+    .mascote {
+        width: 400px;
+
+        max-width: 118%;
+    }
+
+    .hero-right {
+        height: 350px;
+
+        margin-top: -15px;
+    }
+
+    .relatadores {
+        width: 320px;
+
+        max-width: 100%;
+
+        top: 30px;
+    }
+
+    .waves {
+        height: 58px;
+    }
+}
+
+
+/* ==================================================
+   TELAS MUITO PEQUENAS
+================================================== */
+
+@media (max-width: 350px) {
+
+    .logo {
+        width: 145px;
+    }
+
+    .hero {
+        min-height: 1120px;
+    }
+
+    .hero-title {
+        max-width: 320px;
+    }
+
+    .hero-description {
+        max-width: 305px;
+    }
+
+    .hero-center {
+        height: 400px;
+    }
+
+    .mascote {
+        width: 360px;
+    }
+
+    .hero-right {
+        height: 320px;
+    }
+
+    .relatadores {
+        width: 290px;
+    }
+
+    .waves {
+        height: 52px;
+    }
+}
