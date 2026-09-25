@@ -691,6 +691,1514 @@ a {
     background: #dff3ff;
 }
 
+/* ==================================================
+   FUNCIONALIDADES
+================================================== */
+
+#funcionalidades {
+    height: auto;
+    min-height: 100vh;
+
+    padding-top: 85px;
+    padding-bottom: 100px;
+}
+
+
+/* ==================================================
+   CABEÇALHO
+================================================== */
+
+.features-header {
+    max-width: 780px;
+
+    margin-bottom: 42px;
+}
+
+
+.features-header h2 {
+    margin-bottom: 18px;
+}
+
+
+.features-intro {
+    max-width: 680px !important;
+
+    margin: 0 !important;
+
+    color: #47627d !important;
+
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+}
+
+
+/* ==================================================
+   GRID
+================================================== */
+
+.features-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* ==================================================
+   CARD
+================================================== */
+
+.feature-card {
+    position: relative;
+
+    min-height: 245px;
+
+    padding: 25px 24px 22px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background:
+        rgba(255, 255, 255, 0.68);
+
+    border:
+        1px solid
+        rgba(7, 111, 190, 0.10);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(8, 70, 115, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+/* detalhe lateral */
+
+.feature-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #0788d6,
+            #51bde9
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.25s ease;
+}
+
+
+/* HOVER */
+
+.feature-card:hover {
+    transform: translateY(-5px);
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    box-shadow:
+        0 15px 35px
+        rgba(7, 72, 120, 0.11);
+}
+
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+
+/* ==================================================
+   PARTE SUPERIOR
+================================================== */
+
+.feature-top {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 19px;
+}
+
+
+/* NÚMERO */
+
+.feature-number {
+    color: #0788d6;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+/* LINHA */
+
+.feature-line {
+    width: 30px;
+    height: 2px;
+
+    border-radius: 20px;
+
+    background: #78c9ed;
+}
+
+
+/* ==================================================
+   TÍTULO
+================================================== */
+
+.feature-card h3 {
+    max-width: 300px;
+
+    margin:
+        0
+        0
+        12px;
+
+    color: #062b58;
+
+    font-size: 18px;
+    font-weight: 750;
+
+    line-height: 1.25;
+}
+
+
+/* ==================================================
+   DESCRIÇÃO
+================================================== */
+
+.feature-card p {
+    margin: 0 !important;
+
+    color: #52677a !important;
+
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+}
+
+
+/* ==================================================
+   CATEGORIA
+================================================== */
+
+.feature-category {
+    width: fit-content;
+
+    margin-top: auto;
+    padding-top: 18px;
+
+    color: #0788d6;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+
+    text-transform: uppercase;
+}
+
+
+/* ==================================================
+   PEQUENA VARIAÇÃO NOS CARDS
+================================================== */
+
+.feature-card:nth-child(2),
+.feature-card:nth-child(5) {
+    background:
+        rgba(236, 248, 255, 0.88);
+}
+
+/* ==================================================
+   IMPACTO
+================================================== */
+
+.impact-section {
+    height: auto;
+    min-height: 100vh;
+
+    padding-top: 90px;
+    padding-bottom: 100px;
+
+    background: #fff4e8;
+}
+
+
+/* ==================================================
+   CABEÇALHO
+================================================== */
+
+.impact-header {
+    max-width: 850px;
+    margin-bottom: 45px;
+}
+
+
+.impact-header h2 {
+    max-width: 850px;
+    margin-bottom: 20px;
+}
+
+
+.impact-intro {
+    max-width: 750px !important;
+
+    margin: 0 !important;
+
+    color: #526477 !important;
+
+    font-size: 16px !important;
+    line-height: 1.7 !important;
+}
+
+
+/* ==================================================
+   GRID
+================================================== */
+
+.impact-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+
+    margin-top: 40px;
+}
+
+
+/* ==================================================
+   CARDS
+================================================== */
+
+.impact-card {
+    position: relative;
+
+    min-height: 290px;
+
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    background:
+        rgba(255, 255, 255, 0.72);
+
+    border:
+        1px solid
+        rgba(6, 43, 88, 0.08);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(67, 47, 29, 0.06);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+
+.impact-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 17px 38px
+        rgba(67, 47, 29, 0.10);
+}
+
+
+/* ==================================================
+   NÚMERO
+================================================== */
+
+.impact-card-top {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+
+.impact-number {
+    color: #0788d6;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.impact-line {
+    width: 35px;
+    height: 2px;
+
+    background: #77c9ed;
+
+    border-radius: 10px;
+}
+
+
+/* ==================================================
+   PÚBLICO
+================================================== */
+
+.impact-audience {
+    width: fit-content;
+
+    margin-bottom: 10px;
+
+    padding:
+        5px
+        11px;
+
+    border-radius: 50px;
+
+    background: #e2f3ff;
+
+    color: #0875bc;
+
+    font-size: 11px;
+    font-weight: 750;
+
+    text-transform: uppercase;
+
+    letter-spacing: .5px;
+}
+
+
+/* ==================================================
+   TÍTULO
+================================================== */
+
+.impact-card h3 {
+    margin:
+        0
+        0
+        12px;
+
+    color: #062b58;
+
+    font-size: 21px;
+
+    line-height: 1.2;
+}
+
+
+/* ==================================================
+   TEXTO
+================================================== */
+
+.impact-card p {
+    margin: 0 !important;
+
+    color: #526477 !important;
+
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+}
+
+
+/* ==================================================
+   RESULTADO
+================================================== */
+
+.impact-result {
+    margin-top: auto;
+    padding-top: 20px;
+
+    color: #087bc4;
+
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+
+/* ==================================================
+   TRANSFORMAÇÃO
+================================================== */
+
+.impact-transformation {
+    margin-top: 55px;
+
+    padding:
+        38px
+        35px;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    background: #062b58;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 18px 40px
+        rgba(6, 43, 88, .14);
+}
+
+
+/* CABEÇALHO */
+
+.impact-transformation-header {
+    max-width: 600px;
+
+    margin-bottom: 35px;
+}
+
+
+.impact-transformation-header > span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #73ccf4;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.3px;
+
+    text-transform: uppercase;
+}
+
+
+.impact-transformation-header h3 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: 27px;
+    line-height: 1.2;
+}
+
+
+/* ==================================================
+   FLUXO
+================================================== */
+
+.impact-flow {
+    display: flex;
+
+    align-items: stretch;
+
+    gap: 12px;
+}
+
+
+.impact-flow-item {
+    flex: 1;
+
+    min-width: 0;
+
+    padding: 20px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .10);
+
+    border-radius: 16px;
+
+    background:
+        rgba(255, 255, 255, .07);
+}
+
+
+.impact-flow-item > span {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #67c8f3;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+.impact-flow-item strong {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+}
+
+
+.impact-flow-item p {
+    margin: 0 !important;
+
+    color:
+        rgba(255, 255, 255, .72) !important;
+
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+}
+
+
+.impact-flow-arrow {
+    display: flex;
+
+    align-items: center;
+
+    color: #69c9f4;
+
+    font-size: 22px;
+}
+
+
+/* ==================================================
+   FRASE FINAL
+================================================== */
+
+.impact-final {
+    max-width: 900px;
+
+    margin:
+        55px
+        auto
+        0;
+
+    text-align: center;
+}
+
+
+.impact-final-small {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #0788d6;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.impact-final p {
+    margin: 0 auto !important;
+
+    max-width: 800px !important;
+
+    color: #062b58 !important;
+
+    font-size: 21px !important;
+    line-height: 1.55 !important;
+}
+
+
+.impact-final strong {
+    color: #0788d6;
+}
+
+/* ==================================================
+   A SOLUÇÃO
+================================================== */
+
+.solution-section {
+    position: relative;
+    min-height: auto;
+
+    padding-top: 95px;
+    padding-bottom: 100px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 92% 8%,
+            rgba(83, 190, 235, .18),
+            transparent 26%
+        ),
+        radial-gradient(
+            circle at 5% 90%,
+            rgba(255, 200, 116, .13),
+            transparent 24%
+        ),
+        #f7eadc;
+}
+
+
+/* textura decorativa */
+
+.solution-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 340px;
+    height: 340px;
+
+    top: -180px;
+    right: -130px;
+
+    border:
+        1px dashed
+        rgba(7, 129, 207, .18);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* ==================================================
+   CABEÇALHO
+================================================== */
+
+.solution-header {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.25fr)
+        minmax(300px, .75fr);
+
+    align-items: end;
+
+    gap: 70px;
+
+    margin-bottom: 55px;
+}
+
+
+.solution-header-left h2 {
+    max-width: 720px;
+}
+
+
+.solution-header-right {
+    padding-bottom: 5px;
+}
+
+
+.solution-mini-label {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #0788d6;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+
+.solution-header-right p {
+    max-width: 470px !important;
+
+    margin: 0 !important;
+
+    color: #526477 !important;
+
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+}
+
+
+/* ==================================================
+   CARDS
+================================================== */
+
+.solution-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+.solution-card {
+    position: relative;
+
+    min-height: 345px;
+
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background:
+        rgba(255, 255, 255, .72);
+
+    border:
+        1px solid
+        rgba(6, 43, 88, .08);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 12px 30px
+        rgba(63, 45, 29, .055);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.solution-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(48, 60, 70, .11);
+}
+
+
+/* detalhe azul superior */
+
+.solution-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #0878c8,
+            #5bc4ed
+        );
+
+    transform: scaleX(0);
+
+    transform-origin: left;
+
+    transition:
+        transform .3s ease;
+}
+
+
+.solution-card:hover::before {
+    transform: scaleX(1);
+}
+
+
+/* card central */
+
+.solution-card-featured {
+    background:
+        linear-gradient(
+            150deg,
+            #062b58,
+            #07477c
+        );
+
+    border-color:
+        rgba(255, 255, 255, .05);
+
+    box-shadow:
+        0 18px 40px
+        rgba(6, 43, 88, .16);
+}
+
+
+.solution-card-featured:hover {
+    box-shadow:
+        0 25px 50px
+        rgba(6, 43, 88, .22);
+}
+
+
+/* ==================================================
+   NÚMERO
+================================================== */
+
+.solution-card-number {
+    width: 43px;
+    height: 43px;
+
+    margin-bottom: 30px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #e1f3ff;
+
+    color: #0781cf;
+
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+.solution-card-featured
+.solution-card-number {
+    background:
+        rgba(255, 255, 255, .10);
+
+    color: #72cef5;
+}
+
+
+/* ==================================================
+   CONTEÚDO CARD
+================================================== */
+
+.solution-card-label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #0788d6;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+.solution-card h3 {
+    max-width: 310px;
+
+    margin-bottom: 13px;
+
+    color: #062b58;
+
+    font-size: 21px;
+    line-height: 1.22;
+}
+
+
+.solution-card p {
+    margin: 0 !important;
+
+    color: #526477 !important;
+
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+}
+
+
+.solution-card-featured
+.solution-card-label {
+    color: #69caf3;
+}
+
+
+.solution-card-featured h3 {
+    color: #ffffff;
+}
+
+
+.solution-card-featured p {
+    color:
+        rgba(255, 255, 255, .72) !important;
+}
+
+
+/* ==================================================
+   TAGS
+================================================== */
+
+.solution-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+
+    margin-top: auto;
+    padding-top: 25px;
+}
+
+
+.solution-tags span {
+    padding:
+        6px
+        10px;
+
+    border-radius: 50px;
+
+    background: #edf8ff;
+
+    color: #0875bc;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+.solution-card-featured
+.solution-tags span {
+    background:
+        rgba(255, 255, 255, .09);
+
+    color: #c4ebff;
+}
+
+
+/* ==================================================
+   FLUXO DA SOLUÇÃO
+================================================== */
+
+.solution-flow {
+    margin-top: 25px;
+
+    padding:
+        35px
+        35px
+        32px;
+
+    border:
+        1px solid
+        rgba(6, 43, 88, .07);
+
+    border-radius: 22px;
+
+    background:
+        rgba(255, 255, 255, .48);
+}
+
+
+.solution-flow-intro {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding-bottom: 28px;
+
+    border-bottom:
+        1px solid
+        rgba(6, 43, 88, .08);
+}
+
+
+.solution-flow-intro > span {
+    color: #0788d6;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+}
+
+
+.solution-flow-intro h3 {
+    max-width: 520px;
+
+    margin: 0;
+
+    color: #062b58;
+
+    text-align: right;
+
+    font-size: 20px;
+    line-height: 1.35;
+}
+
+
+.solution-flow-intro h3 strong {
+    color: #0788d6;
+}
+
+
+/* ==================================================
+   ETAPAS
+================================================== */
+
+.solution-flow-steps {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding-top: 30px;
+}
+
+
+.solution-step {
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 12px;
+}
+
+
+.solution-step-number {
+    flex-shrink: 0;
+
+    width: 31px;
+    height: 31px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #dff3ff;
+
+    color: #0781cf;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+.solution-step strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #062b58;
+
+    font-size: 13px;
+}
+
+
+.solution-step p {
+    margin: 0 !important;
+
+    color: #647586 !important;
+
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+}
+
+
+.solution-arrow {
+    flex-shrink: 0;
+
+    color: #7acbed;
+
+    font-size: 20px;
+}
+
+
+/* ==================================================
+   FRASE FINAL
+================================================== */
+
+.solution-highlight {
+    position: relative;
+
+    max-width: 870px;
+
+    margin:
+        55px
+        auto
+        0;
+
+    padding:
+        0
+        55px;
+
+    text-align: center;
+}
+
+
+.solution-highlight-mark {
+    position: absolute;
+
+    top: -26px;
+    left: 12px;
+
+    color:
+        rgba(7, 136, 214, .16);
+
+    font-family: Georgia, serif;
+
+    font-size: 95px;
+    line-height: 1;
+}
+
+
+.solution-highlight p {
+    position: relative;
+
+    max-width: 800px !important;
+
+    margin: 0 auto !important;
+
+    color: #062b58 !important;
+
+    font-size: 21px !important;
+    line-height: 1.55 !important;
+}
+
+
+.solution-highlight strong {
+    color: #0788d6;
+}
+
+
+/* ==================================================
+   SOLUÇÃO - TABLET
+================================================== */
+
+@media (max-width: 950px) {
+
+    .solution-header {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+
+    .solution-header-right {
+        max-width: 650px;
+    }
+
+
+    .solution-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .solution-card {
+        min-height: 280px;
+    }
+
+
+    .solution-flow-steps {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 25px;
+    }
+
+
+    .solution-arrow {
+        display: none;
+    }
+
+}
+
+
+/* ==================================================
+   SOLUÇÃO - MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+    .solution-section {
+        padding-top: 65px;
+        padding-bottom: 75px;
+    }
+
+
+    .solution-header {
+        margin-bottom: 35px;
+    }
+
+
+    .solution-header-right p {
+        font-size: 14px !important;
+    }
+
+
+    .solution-card {
+        min-height: auto;
+
+        padding: 24px;
+    }
+
+
+    .solution-card-number {
+        margin-bottom: 23px;
+    }
+
+
+    .solution-card h3 {
+        font-size: 19px;
+    }
+
+
+    .solution-tags {
+        margin-top: 23px;
+        padding-top: 0;
+    }
+
+
+    .solution-flow {
+        margin-top: 18px;
+
+        padding:
+            27px
+            22px;
+    }
+
+
+    .solution-flow-intro {
+        display: block;
+    }
+
+
+    .solution-flow-intro h3 {
+        margin-top: 10px;
+
+        text-align: left;
+
+        font-size: 18px;
+    }
+
+
+    .solution-flow-steps {
+        grid-template-columns: 1fr;
+
+        gap: 23px;
+    }
+
+
+    .solution-highlight {
+        margin-top: 45px;
+
+        padding:
+            0
+            10px;
+    }
+
+
+    .solution-highlight-mark {
+        display: none;
+    }
+
+
+    .solution-highlight p {
+        font-size: 17px !important;
+    }
+
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 900px) {
+
+    .impact-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .impact-flow {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .impact-flow-arrow {
+        display: none;
+    }
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 600px) {
+
+    .impact-section {
+        padding-top: 65px;
+        padding-bottom: 75px;
+    }
+
+
+    .impact-header {
+        margin-bottom: 30px;
+    }
+
+
+    .impact-intro {
+        font-size: 14px !important;
+    }
+
+
+    .impact-grid {
+        margin-top: 30px;
+    }
+
+
+    .impact-card {
+        min-height: auto;
+
+        padding: 23px;
+    }
+
+
+    .impact-card h3 {
+        font-size: 19px;
+    }
+
+
+    .impact-result {
+        margin-top: 20px;
+    }
+
+
+    .impact-transformation {
+        margin-top: 40px;
+
+        padding:
+            28px
+            20px;
+    }
+
+
+    .impact-transformation-header h3 {
+        font-size: 22px;
+    }
+
+
+    .impact-flow {
+        grid-template-columns: 1fr;
+    }
+
+
+    .impact-flow-item {
+        padding: 18px;
+    }
+
+
+    .impact-final {
+        margin-top: 40px;
+    }
+
+
+    .impact-final p {
+        font-size: 17px !important;
+    }
+
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE - TABLET
+================================================== */
+
+@media (max-width: 1000px) {
+
+    #funcionalidades {
+        padding-top: 70px;
+        padding-bottom: 80px;
+    }
+
+
+    .features-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* ==================================================
+   RESPONSIVIDADE - MOBILE
+================================================== */
+
+@media (max-width: 650px) {
+
+    #funcionalidades {
+        padding-top: 60px;
+        padding-bottom: 70px;
+    }
+
+
+    .features-header {
+        margin-bottom: 30px;
+    }
+
+
+    .features-intro {
+        font-size: 14px !important;
+    }
+
+
+    .features-grid {
+        grid-template-columns: 1fr;
+
+        gap: 14px;
+    }
+
+
+    .feature-card {
+        min-height: auto;
+
+        padding: 22px;
+    }
+
+
+    .feature-card h3 {
+        max-width: none;
+
+        font-size: 17px;
+    }
+
+
+    .feature-category {
+        margin-top: 18px;
+        padding-top: 0;
+    }
+
+}
 
 /* ==================================================
    RESPONSIVO - NOTEBOOK
