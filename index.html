@@ -118,11 +118,11 @@
 
                     <div class="hero-buttons">
 
-                        <a
-                            href="#funcionalidades"
+                        <button
+                            type="button"
                             class="button-primary"
+                            id="openCarousel"
                         >
-
                             <span class="play-icon">
                                 ▶
                             </span>
@@ -130,8 +130,7 @@
                             <span>
                                 Ver como funciona
                             </span>
-
-                        </a>
+                        </button>
 
                         <a
                             href="#solucao"
@@ -988,6 +987,89 @@
 
     </main>
 
+    <!-- ==========================================
+     CARROSSEL - COMO FUNCIONA
+=========================================== -->
+
+<div
+    class="project-carousel"
+    id="projectCarousel"
+    aria-hidden="true"
+>
+    <div class="carousel-backdrop"></div>
+
+    <div
+        class="carousel-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Como funciona o Água Cidadã"
+    >
+
+        <!-- FECHAR -->
+        <button
+            type="button"
+            class="carousel-close"
+            id="closeCarousel"
+            aria-label="Fechar apresentação"
+        >
+            ×
+        </button>
+
+
+        <!-- IMAGEM -->
+        <div class="carousel-image-wrapper">
+
+            <img
+                src="img/img1.png"
+                alt="Apresentação Água Cidadã"
+                id="carouselImage"
+                class="carousel-image"
+            >
+
+            <!-- ANTERIOR -->
+            <button
+                type="button"
+                class="carousel-arrow carousel-prev"
+                id="carouselPrev"
+                aria-label="Imagem anterior"
+            >
+                ‹
+            </button>
+
+
+            <!-- PRÓXIMA -->
+            <button
+                type="button"
+                class="carousel-arrow carousel-next"
+                id="carouselNext"
+                aria-label="Próxima imagem"
+            >
+                ›
+            </button>
+
+        </div>
+
+
+        <!-- CONTROLES -->
+        <div class="carousel-controls">
+
+            <span
+                class="carousel-counter"
+                id="carouselCounter"
+            >
+                1 / 11
+            </span>
+
+            <div
+                class="carousel-dots"
+                id="carouselDots"
+            ></div>
+
+        </div>
+
+    </div>
+</div>
+
 
     <!-- ==========================================
          JAVASCRIPT
@@ -1135,6 +1217,352 @@
             }
 
         });
+
+        /* ==========================================
+   CARROSSEL - COMO FUNCIONA
+=========================================== */
+
+const openCarousel =
+    document.getElementById("openCarousel");
+
+const projectCarousel =
+    document.getElementById("projectCarousel");
+
+const closeCarousel =
+    document.getElementById("closeCarousel");
+
+const carouselImage =
+    document.getElementById("carouselImage");
+
+const carouselPrev =
+    document.getElementById("carouselPrev");
+
+const carouselNext =
+    document.getElementById("carouselNext");
+
+const carouselCounter =
+    document.getElementById("carouselCounter");
+
+const carouselDots =
+    document.getElementById("carouselDots");
+
+const carouselBackdrop =
+    document.querySelector(".carousel-backdrop");
+
+
+/* ==========================================
+   IMAGENS
+
+   Se as suas imagens forem .jpg ou .jpeg,
+   basta alterar ".png" aqui.
+=========================================== */
+
+const carouselImages = [
+    "img/img1.png",
+    "img/img2.png",
+    "img/img3.png",
+    "img/img4.png",
+    "img/img5.png",
+    "img/img6.png",
+    "img/img7.png",
+    "img/img8.png",
+    "img/img9.png",
+    "img/img10.png",
+    "img/img11.png"
+];
+
+
+let currentCarouselImage = 0;
+
+
+/* ==========================================
+   CRIAR INDICADORES
+=========================================== */
+
+carouselImages.forEach((image, index) => {
+
+    const dot =
+        document.createElement("button");
+
+    dot.type = "button";
+
+    dot.className = "carousel-dot";
+
+    dot.setAttribute(
+        "aria-label",
+        `Ir para imagem ${index + 1}`
+    );
+
+    dot.addEventListener("click", () => {
+
+        currentCarouselImage = index;
+
+        updateCarousel();
+
+    });
+
+    carouselDots.appendChild(dot);
+
+});
+
+
+/* ==========================================
+   ATUALIZAR CARROSSEL
+=========================================== */
+
+function updateCarousel() {
+
+    carouselImage.classList.add("changing");
+
+    setTimeout(() => {
+
+        carouselImage.src =
+            carouselImages[currentCarouselImage];
+
+        carouselImage.alt =
+            `Água Cidadã - etapa ${currentCarouselImage + 1}`;
+
+        carouselCounter.textContent =
+            `${currentCarouselImage + 1} / ${carouselImages.length}`;
+
+
+        document
+            .querySelectorAll(".carousel-dot")
+            .forEach((dot, index) => {
+
+                dot.classList.toggle(
+                    "active",
+                    index === currentCarouselImage
+                );
+
+            });
+
+
+        carouselImage.onload = () => {
+
+            carouselImage.classList.remove(
+                "changing"
+            );
+
+        };
+
+    }, 150);
+
+}
+
+
+/* ==========================================
+   PRÓXIMA
+=========================================== */
+
+function nextCarouselImage() {
+
+    currentCarouselImage =
+        (currentCarouselImage + 1)
+        % carouselImages.length;
+
+    updateCarousel();
+
+}
+
+
+/* ==========================================
+   ANTERIOR
+=========================================== */
+
+function previousCarouselImage() {
+
+    currentCarouselImage =
+        (
+            currentCarouselImage
+            - 1
+            + carouselImages.length
+        )
+        % carouselImages.length;
+
+    updateCarousel();
+
+}
+
+
+/* ==========================================
+   ABRIR
+=========================================== */
+
+function showCarousel() {
+
+    currentCarouselImage = 0;
+
+    updateCarousel();
+
+    projectCarousel.classList.add(
+        "active"
+    );
+
+    projectCarousel.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+    document.body.classList.add(
+        "carousel-open"
+    );
+
+}
+
+
+/* ==========================================
+   FECHAR
+=========================================== */
+
+function hideCarousel() {
+
+    projectCarousel.classList.remove(
+        "active"
+    );
+
+    projectCarousel.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+    document.body.classList.remove(
+        "carousel-open"
+    );
+
+}
+
+
+/* ==========================================
+   EVENTOS
+=========================================== */
+
+openCarousel.addEventListener(
+    "click",
+    showCarousel
+);
+
+
+closeCarousel.addEventListener(
+    "click",
+    hideCarousel
+);
+
+
+carouselBackdrop.addEventListener(
+    "click",
+    hideCarousel
+);
+
+
+carouselNext.addEventListener(
+    "click",
+    nextCarouselImage
+);
+
+
+carouselPrev.addEventListener(
+    "click",
+    previousCarouselImage
+);
+
+
+/* ==========================================
+   TECLADO
+=========================================== */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            !projectCarousel.classList.contains(
+                "active"
+            )
+        ) {
+            return;
+        }
+
+
+        if (event.key === "Escape") {
+
+            hideCarousel();
+
+        }
+
+
+        if (event.key === "ArrowRight") {
+
+            nextCarouselImage();
+
+        }
+
+
+        if (event.key === "ArrowLeft") {
+
+            previousCarouselImage();
+
+        }
+
+    }
+);
+
+
+/* ==========================================
+   SWIPE MOBILE
+=========================================== */
+
+let touchStartX = 0;
+
+let touchEndX = 0;
+
+
+carouselImage.addEventListener(
+    "touchstart",
+    event => {
+
+        touchStartX =
+            event.changedTouches[0].screenX;
+
+    },
+    { passive: true }
+);
+
+
+carouselImage.addEventListener(
+    "touchend",
+    event => {
+
+        touchEndX =
+            event.changedTouches[0].screenX;
+
+        const difference =
+            touchStartX - touchEndX;
+
+
+        if (Math.abs(difference) < 45) {
+            return;
+        }
+
+
+        if (difference > 0) {
+
+            nextCarouselImage();
+
+        } else {
+
+            previousCarouselImage();
+
+        }
+
+    },
+    { passive: true }
+);
+
+
+/* PRIMEIRO ESTADO */
+
+updateCarousel();
 
     </script>
 

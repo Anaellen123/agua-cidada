@@ -2680,3 +2680,405 @@ a {
         height: 52px;
     }
 }
+
+/* ==================================================
+   BOTÃO VER COMO FUNCIONA
+================================================== */
+
+button.button-primary {
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+/* ==================================================
+   MODAL DO CARROSSEL
+================================================== */
+
+.project-carousel {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity .3s ease,
+        visibility .3s ease;
+}
+
+
+.project-carousel.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* FUNDO ESCURO */
+
+.carousel-backdrop {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(1, 22, 43, .86);
+
+    backdrop-filter: blur(7px);
+}
+
+
+/* ==================================================
+   CAIXA
+================================================== */
+
+.carousel-modal {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1050px, 92vw);
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 30px 80px
+        rgba(0, 0, 0, .35);
+
+    transform: scale(.94);
+
+    transition:
+        transform .3s ease;
+}
+
+
+.project-carousel.active .carousel-modal {
+    transform: scale(1);
+}
+
+
+/* ==================================================
+   IMAGEM
+================================================== */
+
+.carousel-image-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    background: #062b58;
+
+    aspect-ratio: 16 / 9;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    user-select: none;
+
+    transition:
+        opacity .18s ease,
+        transform .18s ease;
+}
+
+
+.carousel-image.changing {
+    opacity: .25;
+
+    transform: scale(.985);
+}
+
+
+/* ==================================================
+   BOTÃO FECHAR
+================================================== */
+
+.carousel-close {
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    z-index: 10;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(4, 38, 72, .88);
+
+    color: #ffffff;
+
+    font-size: 29px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+
+.carousel-close:hover {
+    transform: rotate(90deg);
+
+    background: #0788d6;
+}
+
+
+/* ==================================================
+   SETAS
+================================================== */
+
+.carousel-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    z-index: 5;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: translateY(-50%);
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, .92);
+
+    color: #062b58;
+
+    box-shadow:
+        0 6px 20px
+        rgba(0, 0, 0, .18);
+
+    font-size: 36px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        color .2s ease;
+}
+
+
+.carousel-arrow:hover {
+    background: #0788d6;
+
+    color: #ffffff;
+}
+
+
+.carousel-prev {
+    left: 18px;
+}
+
+
+.carousel-next {
+    right: 18px;
+}
+
+
+/* ==================================================
+   PARTE INFERIOR
+================================================== */
+
+.carousel-controls {
+    min-height: 65px;
+
+    padding:
+        15px
+        24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 25px;
+
+    background: #ffffff;
+}
+
+
+/* CONTADOR */
+
+.carousel-counter {
+    flex-shrink: 0;
+
+    color: #557086;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+
+/* ==================================================
+   BOLINHAS
+================================================== */
+
+.carousel-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #c9d9e5;
+
+    cursor: pointer;
+
+    transition:
+        width .2s ease,
+        background .2s ease,
+        border-radius .2s ease;
+}
+
+
+.carousel-dot.active {
+    width: 25px;
+
+    border-radius: 20px;
+
+    background: #0788d6;
+}
+
+
+/* ==================================================
+   BLOQUEAR SCROLL
+================================================== */
+
+body.carousel-open {
+    overflow: hidden;
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 700px) {
+
+    .project-carousel {
+        padding: 12px;
+    }
+
+
+    .carousel-modal {
+        width: 100%;
+
+        border-radius: 16px;
+    }
+
+
+    .carousel-image-wrapper {
+        aspect-ratio: 16 / 9;
+    }
+
+
+    .carousel-arrow {
+        width: 39px;
+        height: 39px;
+
+        font-size: 29px;
+    }
+
+
+    .carousel-prev {
+        left: 8px;
+    }
+
+
+    .carousel-next {
+        right: 8px;
+    }
+
+
+    .carousel-close {
+        top: 8px;
+        right: 8px;
+
+        width: 36px;
+        height: 36px;
+
+        font-size: 25px;
+    }
+
+
+    .carousel-controls {
+        padding: 12px;
+
+        gap: 12px;
+    }
+
+
+    .carousel-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+
+    .carousel-dot.active {
+        width: 19px;
+    }
+
+}
